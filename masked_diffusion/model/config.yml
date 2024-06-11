@@ -1,0 +1,32 @@
+data:
+  ixi:
+    path: iamkzntsv/IXI2D
+    save_dir: data/ixi/transformed
+model:
+  clip_denoised: true
+  num_samples: 4
+  batch_size: 1
+  image_size: 256
+  use_ddim: false
+  lr: 0.001
+scheduler:
+  beta_end : 0.02
+  beta_start : 0.0001
+  beta_schedule: linear
+weights:
+  url: https://openaipublic.blob.core.windows.net/diffusion/jul-2021/256x256_diffusion_uncond.pt
+  save_dir: masked_diffusion/model/pretrained/model.pt
+trainer:
+  devices: 1
+  max_epochs: 10
+  accumulate_grad_batches: 8
+  fast_dev_run: false
+repaint:
+  num_inference_steps: 250
+  jump_length: 10
+  jump_n_sample: 10
+logging:
+  project: masked-diffusion-mri
+  log_model: true
+device: cpu
+save_path: '/Users/iamkzntsv/Desktop'

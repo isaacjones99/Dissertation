@@ -1,0 +1,7 @@
+venv/
+
+/data/
+/masked_diffusion/model/pretrained
+
+# User-specific
+.DS_Store
