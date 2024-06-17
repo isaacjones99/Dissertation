@@ -11,7 +11,7 @@ diffusers
 datasets
 opencv-python
 nibabel==5.1.0
-# wandb==0.15.5
+wandb==0.15.5
 arrow==1.2.3
 blessed==1.20.0
 click==8.1.3

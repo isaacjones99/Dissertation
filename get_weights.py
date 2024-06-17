@@ -24,6 +24,7 @@ def download_weights(url, save_dir):
 
 def main():
     args = parse_args()
+    print(f"args: {args}")
     save_path = os.path.join(args.path, "model.pt")
 
     weights_url = "https://openaipublic.blob.core.windows.net/diffusion/jul-2021/256x256_diffusion_uncond.pt"
@@ -32,7 +33,10 @@ def main():
     if not os.path.exists(args.path):
         raise ValueError(f"The provided path does not exist: {args.path}")
     logger.info(f"Processing path: {args.path}")
+
+    print("Downloading weights")
     download_weights(weights_url, save_path)
+    print("Done")
 
 
 if __name__ == "__main__":
