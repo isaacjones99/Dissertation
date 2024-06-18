@@ -4,9 +4,9 @@ SHELL = /bin/bash
 DOCKER_TAG=masked-diffusion-mri:latest
 
 # Args
-WEIGHTS_PATH="/app/weights"
-DATA_PATH="/app/data"
-SAVE_DIR="/app/data"
+WEIGHTS_PATH=./masked_diffusion/model/pretrained
+DATA_PATH=./data
+SAVE_DIR="./saves"
 PREPROCESS_ARGS=
 INPAINT_ARGS=
 TRAIN_ARGS=
