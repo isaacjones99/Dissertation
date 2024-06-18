@@ -5,6 +5,7 @@ WORKDIR /app
 
 # Install system dependencies including MPI, OpenGL libraries for OpenCV, and GLib for libgthread
 RUN apt-get update && apt-get install -y \
+    curl \
     gcc \
     g++ \
     python3-dev \
