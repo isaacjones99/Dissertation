@@ -79,10 +79,14 @@ def main():
     # Ensure the path exists
     if not os.path.exists(args.path):
         raise ValueError(f"The provided path does not exist: {args.path}")
-    logger.info(f"Processing path: {args.path}")
-
-    print("Downloading weights")
-    download_weights(weights_url, save_path)
+    # Check weights not already downloaded
+    print(f"{args.path}/model.pt")
+    if os.path.exists(f"{args.path}/model.pt"):
+        logger.info("Weights already downloaded.")
+    else:
+        logger.info(f"Processing path: {args.path}")
+        print("Downloading weights")
+        download_weights(weights_url, save_path)
     print("Done")
 
 if __name__ == "__main__":
