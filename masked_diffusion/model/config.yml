@@ -29,4 +29,4 @@ logging:
   project: masked-diffusion-mri
   log_model: true
 device: cpu
-save_path: '/Users/iamkzntsv/Desktop'
+save_path: '/Users/isaac/Desktop'
