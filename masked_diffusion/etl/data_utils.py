@@ -1,3 +1,4 @@
+import logging
 import os
 
 import nibabel as nib
@@ -5,13 +6,18 @@ import numpy as np
 from PIL import Image
 from datasets import load_dataset
 
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+
 FILENAMES = ["t1", "mask"]
 
 
 def download_and_save_dataset(path, save_dir) -> None:
     # Load the dataset from HuggingFace hub
+    logger.info("Loading the dataset from HuggingFace")
     dataset = load_dataset(path)
 
+    logger.info("Saving the dataset locally")
     # Save the dataset locally
     dataset.save_to_disk(save_dir)
 
