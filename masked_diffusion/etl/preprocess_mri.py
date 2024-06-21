@@ -28,12 +28,16 @@ def main():
     args = parse_args()
     config = update_config(load_yaml_config("masked_diffusion/model/config.yml"), vars(args))
 
-    download_and_save_dataset(**config["data"]["ixi"])
-    ref_dataset = load_from_disk(os.path.join("data/ixi/transformed", "train"))
+    # download_and_save_dataset(**config["data"]["ixi"])
+    logger.info("Loading dataset from disk.")
+    ref_dataset = load_from_disk(os.path.join("/app/data/ixi/transformed", "train"))
+    logger.info("Get reference image")
     hist_ref = get_reference_image(ref_dataset)
 
+    logger.info("Get transform")
     transform = get_transform(config["model"]["image_size"])
 
+    logger.info("Creating custom dataset")
     dataset = CustomDataset(
         "data/new/raw",
         hist_ref,
