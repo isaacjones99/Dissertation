@@ -3,6 +3,7 @@ venv/
 # /data/
 /masked_diffusion/model/pretrained/model.pt
 /saves/
+/data/
 
 # User-specific
 .DS_Store
