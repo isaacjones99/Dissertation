@@ -1,6 +1,6 @@
 # Dissertation
 
-Project for Data Science MSc Dissertation.
+Project for Data Science MSc dissertation.
 
 
 
